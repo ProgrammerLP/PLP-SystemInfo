@@ -1,12 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Management;
-using System.Text;
 
 namespace PLP_SystemInfo
 {
-    internal class ComponentInfo
+    public static class ComponentInfo
     {
         public static string GetOperatingSystemInfo()
         {
@@ -89,21 +87,21 @@ namespace PLP_SystemInfo
             return memSize;
         }
 
-        public static long GetTotalUsableRam()
-        {
-            return 0;
-        }
+        //public static long GetTotalUsableRam()
+        //{
+        //    return 0;
+        //}
 
-        public static long GetRamInUse()
-        {
-            return 0;
-        }
+        //public static long GetRamInUse()
+        //{
+        //    return 0;
+        //}
 
-        public static long GetAvailableRam()
-        {
+        //public static long GetAvailableRam()
+        //{
 
-            return 0;
-        }
+        //    return 0;
+        //}
 
         public static string GetGraphicscardName()
         {
@@ -124,7 +122,8 @@ namespace PLP_SystemInfo
             catch (Exception e)
             {
                 Console.WriteLine("An error occurred while querying GPU Name in NuGet Package PLP-SystemInfo: " + e.Message);
-                return e.Message;            }
+                return e.Message;
+            }
         }
 
         public static long GetGraphicscardVRAM()

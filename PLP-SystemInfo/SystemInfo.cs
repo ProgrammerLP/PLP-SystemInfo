@@ -1,12 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace PLP_SystemInfo
 {
-    internal class SystemInfo
+    public static class SystemInfo
     {
         public static bool IsDarkModeEnabled => Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1) is null;
 
