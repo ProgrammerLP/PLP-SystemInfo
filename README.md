@@ -2,13 +2,13 @@
 
 A C# Library for getting several SystemInfos!
 
-PLP-SystemInfo ist mit folgenden Frameworks kompatibel:
-- .NET 5 oder höher
+PLP-SystemInfo is compatible with the following frameworks:
+- .NET 5 or higher
 - .Net Core 2 - 3.1
 - .Net Standard 2.0 & 2.1
-- .Net Framework 4.6.1 oder höher
+- .Net Framework 4.6.1 or higher
 
-Abhängigkeiten:
+Dependencies:
 - System.Management
 - System.Win32
 
@@ -16,63 +16,63 @@ Abhängigkeiten:
 PLP-SystemInfo is available as a [NuGet Package](https://www.nuget.org/packages/PLP-SystemInfo)
 
 # Documentation
-Das Package enthält im Namespace ``PLP_SystemInfo`` zwei Klassen um Systeminformationen auszulesen, einmal ``SystemInfo`` und ``ComponentInfo``,
-diese Klassen enthälten verschiedene Methoden zum Auslesen von Systeminfos.
+The package contains in the namespace ``PLP_SystemInfo`` two classes for reading system information, ``SystemInfo`` and ``ComponentInfo``,
+these classes contain different methods for reading system information.
 
 ## PLP_SystemInfo.SystemInfo
-Die Klasse ``SystemInfo`` enthält hauptsächlich nur Methoden um allgemeine Systemwerte auszulesen.
-Jede Methode besitzt einen Rückgabewert, welcher die Benutzung vereinfacht.
+The class ``SystemInfo`` contains mainly methods to read general system values.
+Each method has a return value which simplifies the usage.
 
-```cs
+``cs
 using PLP_SystemInfo;
 
 bool b = SystemInfo.IsDarkModeEnabled;
-// Gibt ein bool-Wert zurück der Wiederspiegelt ob der Windows Darkmode aktiviert ist
+// Returns a bool value that reflects whether the Windows darkmode is enabled
 
 string s = SystemInfo.GetWindowsAccentColor();
-// Gibt die Windows Akzentfarbe als HEX-Wert zurück.
+// Returns the Windows accent color as HEX value.
 
 Color c = SystemInfo.GetAccentColor();
-// Gibt die Windows Akzentfarbe als Color-Wert zurück.
+// Returns the Windows accent color as a Color value.
 ```
 
 ## PLP_SystemInfo.ComponentInfo
-Die Klasse ``ComponentInfo`` enthält hauptsächlich nur Methoden um die wichtigsten PC-Komponenten auszulesen.
-Auch hier besitzt jede Methode einen Rückgabewert für einfache die Verwendung.
+The class ``ComponentInfo`` contains mainly only methods to read out the most important PC components.
+Again, each method has a return value for simple usage.
 
-```cs
+``cs
 using PLP_SystemInfo;
 
 string s = ComponentInfo.GetOperatingSystemInfo();
-// Gibt einen string zurück, der den OS Namen und die Architektur beinhaltet.
+// Returns a string containing the OS name and architecture.
 
 string t = ComponentInfo.GetCPUName();
-// Gibt einen string zurück, der den CPU Namen enthält.
+// Returns a string containing the CPU name.
 
 int i = ComponentInfo.GetCPUThreads();
-// Gibt einen Integer zurück, der die Anzahl an Prozessor-Threads benhaltet.
+// Returns an integer containing the number of processor threads.
 
 int j = ComponentInfo.GetCPUCores();
-// Gibt einen Integer zurück, mit der Anzahl an Prozessorkernen.
+// Returns an integer containing the number of processor cores.
 
 long l = ComponentInfo.GetInstalledRAMSize();
-// Gibt einen long-Wert zurück, mit der Anzahl an dem Total installierten RAM.
+// Returns a long value with the number of the total installed RAM.
 
 long m = ComponentInfo.GetTotalUsableRam();
-// Gibt einen long-Wert zurück, der die Anzahl an insgesamt nutzbaren RAM angibt.
+// Returns a long value with the total amount of usable RAM.
 
 long n = ComponentInfo.GetRamInUse();
-// Gibt einen long-Wert zurück, der den belegten Ram angibt.
+// Returns a long value that indicates the amount of used RAM.
 
 long o = ComponentInfo.GetAvailableRam();
-// Gibt einen long-Wert zurück, der den freien Ram zurück gibt.
+// Returns a long value indicating the free Ram.
 
 string u = ComponentInfo.GetGraphicscardName();
-// Gibt einen string zurück, der den Namen der Grafikkarte beinhaltet.
+// Returns a string containing the name of the graphics card.
 
 long p = ComponentInfo.GetGraphicscardVRAM();
-// Gibt einen long-Wert zurück, der den VRAM der Grafikkarte angibt.
-// ACHTUNG: Angabe nur richtig, wenn Grafikkarte mit dem WDDM 2 Treiber kompatibel ist.
+// Returns a long value that specifies the VRAM of the graphics card.
+// ATTENTION: Only correct if the graphics card is compatible with the WDDM 2 driver.
 ```
 
 # License
