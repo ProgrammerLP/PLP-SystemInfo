@@ -23,7 +23,7 @@ these classes contain different methods for reading system information.
 The class ``SystemInfo`` contains mainly methods to read general system values.
 Each method has a return value which simplifies the usage.
 
-``cs
+```cs
 using PLP_SystemInfo;
 
 bool b = SystemInfo.IsDarkModeEnabled;
@@ -40,7 +40,7 @@ Color c = SystemInfo.GetAccentColor();
 The class ``ComponentInfo`` contains mainly only methods to read out the most important PC components.
 Again, each method has a return value for simple usage.
 
-``cs
+```cs
 using PLP_SystemInfo;
 
 string s = ComponentInfo.GetOperatingSystemInfo();
