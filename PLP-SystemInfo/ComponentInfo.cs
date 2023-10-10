@@ -87,21 +87,20 @@ namespace PLP_SystemInfo
             return memSize;
         }
 
-        //public static long GetTotalUsableRam()
-        //{
-        //    return 0;
-        //}
+        public static long GetTotalUsableRam()
+        {
+            throw new NotImplementedException();
+        }
 
-        //public static long GetRamInUse()
-        //{
-        //    return 0;
-        //}
+        public static long GetRamInUse()
+        {
+            throw new NotImplementedException();
+        }
 
-        //public static long GetAvailableRam()
-        //{
-
-        //    return 0;
-        //}
+        public static long GetAvailableRam()
+        {
+            throw new NotImplementedException();
+        }
 
         public static string GetGraphicscardName()
         {
