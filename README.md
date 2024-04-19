@@ -26,6 +26,12 @@ Each method has a return value which simplifies the usage.
 ```cs
 using PLP_SystemInfo;
 
+string userName = SystemInfo.UserName;
+//Retruns the username of the current user
+
+string machineName = SystemInfo.MachineName;
+//Retruns the name of the machine.
+
 bool b = SystemInfo.IsDarkModeEnabled;
 // Returns a bool value that reflects whether the Windows darkmode is enabled
 
@@ -36,43 +42,41 @@ Color c = SystemInfo.GetAccentColor();
 // Returns the Windows accent color as a Color value.
 ```
 
-## PLP_SystemInfo.ComponentInfo
-The class ``ComponentInfo`` contains mainly only methods to read out the most important PC components.
+## PLP_SystemInfo.ComponentInfo.*
+The namespace ``PLP_SystemInfo.ComponentInfo`` contains different classes to read out the most important PC components.
 Again, each method has a return value for simple usage.
 
 ```cs
-using PLP_SystemInfo;
+using PLP_SystemInfo.ComponentInfo;
 
-string s = ComponentInfo.GetOperatingSystemInfo();
-// Returns a string containing the OS name and architecture.
+Board b = BoardInfo.GetMotherboard();
+// Returns an object of type **Board** with manufacturer and model.
 
-string t = ComponentInfo.GetCPUName();
-// Returns a string containing the CPU name.
+BIOS bios = BoardInfo.GetBIOSInfo();
+// Returns an object of type **BIOS** with manufacturer and version.
 
-int i = ComponentInfo.GetCPUThreads();
-// Returns an integer containing the number of processor threads.
+string os = OSInfo.GetOperatingSystemInfo();
+// Returns a string with OS name and architecture.
 
-int j = ComponentInfo.GetCPUCores();
-// Returns an integer containing the number of processor cores.
+ProcessorCollection processors = ProcessorInfo.GetProcessors();
+// Returns a collection of type **Processor** containing information such as name, architecture, cores, threads, cache and clock speed.
 
-long l = ComponentInfo.GetInstalledRAMSize();
-// Returns a long value with the number of the total installed RAM.
+RamCollection rams = RamInfo.GetRamInfo();
+// Returns a collection of type **RAM** containing information for each installed ram module such as manufacturer, frequency, voltage and capacity.
 
-long m = ComponentInfo.GetTotalUsableRam();
-// Returns a long value with the total amount of usable RAM.
+long ram = RamInfo.GetInstalledRAMSize();
+// Returns a long value of the installed GB of RAM.
 
-long n = ComponentInfo.GetRamInUse();
-// Returns a long value that indicates the amount of used RAM.
+GraphicsCollection graphics = GraphicsInfo.GetGraphicscardInfo();
+// Returns a collection of type **GraphicsCard** containing information such as name and driver version.
+```
 
-long o = ComponentInfo.GetAvailableRam();
-// Returns a long value indicating the free Ram.
-
-string u = ComponentInfo.GetGraphicscardName();
-// Returns a string containing the name of the graphics card.
-
-long p = ComponentInfo.GetGraphicscardVRAM();
-// Returns a long value that specifies the VRAM of the graphics card.
-// ATTENTION: Only correct if the graphics card is compatible with the WDDM 2 driver.
+To get the information from the collections, simply use a foreach loop, e.g:
+```cs
+foreach (var item in ram) //ram is a **RamCollection** from the example above
+{
+  Console.WriteLine(item.Manufacturer);
+}
 ```
 
 # License
