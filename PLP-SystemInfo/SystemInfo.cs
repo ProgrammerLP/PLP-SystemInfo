@@ -6,7 +6,10 @@ namespace PLP_SystemInfo
 {
     public static class SystemInfo
     {
+        public static string UserName => Environment.UserName;
+        public static string MachineName => Environment.MachineName;
         public static bool IsDarkModeEnabled => Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1) is null;
+
 
         public static string GetWindowsAccentColor()
         {

@@ -5,21 +5,22 @@
     <RootNamespace>PLP_SystemInfo</RootNamespace>
     <Title>PLP-SystemInfo</Title>
     <Authors>ProgrammerLP</Authors>
-    <Company>ProgrammerLP</Company>
+    <Company>Adeptstack</Company>
     <Description>The C# library offers functions to read system information, including Windows accent color, system dark mode, and various system components, for developers to improve the user experience.</Description>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/ProgrammerLP/PLP-SystemInfo</RepositoryUrl>
     <PackageTags>info, system, system-info, system info, windows</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <FileVersion>1.0.2</FileVersion>
-    <Version>1.0.2</Version>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <FileVersion>2.0.0</FileVersion>
+    <Version>2.0.0</Version>
+    <Copyright>© - ProgrammerLP</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
-    <PackageReference Include="System.Management" Version="7.0.0" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
