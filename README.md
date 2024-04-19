@@ -61,7 +61,7 @@ string os = OSInfo.GetOperatingSystemInfo();
 ProcessorCollection processors = ProcessorInfo.GetProcessors();
 // Returns a collection of type **Processor** containing information such as name, architecture, cores, threads, cache and clock speed.
 
-RamCollection rams = RamInfo.GetRamInfo();
+RamCollection ram = RamInfo.GetRamInfo();
 // Returns a collection of type **RAM** containing information for each installed ram module such as manufacturer, frequency, voltage and capacity.
 
 long ram = RamInfo.GetInstalledRAMSize();
