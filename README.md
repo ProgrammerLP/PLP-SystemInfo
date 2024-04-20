@@ -64,8 +64,20 @@ ProcessorCollection processors = ProcessorInfo.GetProcessors();
 RamCollection ram = RamInfo.GetRamInfo();
 // Returns a collection of type **RAM** containing information for each installed ram module such as manufacturer, frequency, voltage and capacity.
 
-long ram = RamInfo.GetInstalledRAMSize();
+long totalRam = RamInfo.GetInstalledRAMSize();
 // Returns a long value of the installed GB of RAM.
+
+double d1 = RamInfo.GetTotalUsableRam();
+// Returns the total useable ram in GB.
+
+double d2 = RamInfo.GetHardwareReservedRam();
+// Returns the harware reserved ram in MB.
+
+double d3 = RamInfo.GetRamInUse();
+// Returns the used ram in GB.
+
+double  d4 = RamInfo.GetAvailableRam();
+// Returns the available ram.
 
 GraphicsCollection graphics = GraphicsInfo.GetGraphicscardInfo();
 // Returns a collection of type **GraphicsCard** containing information such as name and driver version.
