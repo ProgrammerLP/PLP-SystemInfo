@@ -16,8 +16,8 @@ Dependencies:
 PLP-SystemInfo is available as a [NuGet Package](https://www.nuget.org/packages/PLP-SystemInfo)
 
 # Documentation
-The package contains in the namespace ``PLP_SystemInfo`` two classes for reading system information, ``SystemInfo`` and ``ComponentInfo``,
-these classes contain different methods for reading system information.
+The package contains in the namespace ``PLP_SystemInfo`` one class for reading system information, ``SystemInfo.cs`` and 3 more namespaces: ``Collections``, ``ComponentInfo`` and ``Models``,
+The namespaces ``Collections`` and ``Models`` are largely ignored for use. They only provide the corresponding classes for the outputs.
 
 ## PLP_SystemInfo.SystemInfo
 The class ``SystemInfo`` contains mainly methods to read general system values.
@@ -44,22 +44,41 @@ Color c = SystemInfo.GetAccentColor();
 
 ## PLP_SystemInfo.ComponentInfo.*
 The namespace ``PLP_SystemInfo.ComponentInfo`` contains different classes to read out the most important PC components.
-Again, each method has a return value for simple usage.
 
+### BoardInfo.cs
 ```cs
 using PLP_SystemInfo.ComponentInfo;
+using PLP_SystemInfo.Models;
 
 Board b = BoardInfo.GetMotherboard();
 // Returns an object of type **Board** with manufacturer and model.
 
 BIOS bios = BoardInfo.GetBIOSInfo();
 // Returns an object of type **BIOS** with manufacturer and version.
+```
+
+
+### OSInfo.cs
+```cs
+using PLP_SystemInfo.ComponentInfo;
 
 string os = OSInfo.GetOperatingSystemInfo();
 // Returns a string with OS name and architecture.
+```
+
+### ProcessorInfo.cs
+```cs
+using PLP_SystemInfo.ComponentInfo;
+using PLP_SystemInfo.Collections;
 
 ProcessorCollection processors = ProcessorInfo.GetProcessors();
 // Returns a collection of type **Processor** containing information such as name, architecture, cores, threads, cache and clock speed.
+```
+
+### RamInfo.cs
+```cs
+using PLP_SystemInfo.ComponentInfo;
+using PLP_SystemInfo.Collections;
 
 RamCollection ram = RamInfo.GetRamInfo();
 // Returns a collection of type **RAM** containing information for each installed ram module such as manufacturer, frequency, voltage and capacity.
@@ -78,6 +97,12 @@ double d3 = RamInfo.GetRamInUse();
 
 double  d4 = RamInfo.GetAvailableRam();
 // Returns the available ram.
+```
+
+### GraphicsInfo.cs
+```cs
+using PLP_SystemInfo.ComponentInfo;
+using PLP_SystemInfo.Collections;
 
 GraphicsCollection graphics = GraphicsInfo.GetGraphicscardInfo();
 // Returns a collection of type **GraphicsCard** containing information such as name and driver version.
@@ -85,9 +110,9 @@ GraphicsCollection graphics = GraphicsInfo.GetGraphicscardInfo();
 
 To get the information from the collections, simply use a foreach loop, e.g:
 ```cs
-foreach (var item in ram) //ram is a **RamCollection** from the example above
+foreach (var item in <yourCollection>)
 {
-  Console.WriteLine(item.Manufacturer);
+  Console.WriteLine(item.<Property>);
 }
 ```
 
