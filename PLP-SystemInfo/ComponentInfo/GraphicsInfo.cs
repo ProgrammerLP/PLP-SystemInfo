@@ -6,7 +6,10 @@ namespace PLP_SystemInfo.ComponentInfo
 {
     public class GraphicsInfo
     {
-        //Graphics
+        /// <summary>
+        /// Returns a collection of type **GraphicsCard** containing information such as name and driver version.
+        /// </summary>
+        /// <returns></returns>
         public static GraphicsCollection GetGraphicscardInfo()
         {
             GraphicsCollection graphics = new GraphicsCollection();

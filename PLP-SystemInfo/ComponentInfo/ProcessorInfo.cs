@@ -46,6 +46,10 @@ namespace PLP_SystemInfo.ComponentInfo
             return result;
         }
 
+        /// <summary>
+        /// Returns a collection of type **Processor** containing information such as name, architecture, cores, threads, cache and clock speed.
+        /// </summary>
+        /// <returns></returns>
         public static ProcessorCollection GetProcessors()
         {
             ProcessorCollection processors = new ProcessorCollection();

@@ -45,6 +45,11 @@ namespace PLP_SystemInfoTest
             list.Items.Add(ProcessorInfo.GetProcessors().ToString());
             list.Items.Add(RamInfo.GetRamInfo().ToString());
             list.Items.Add(GraphicsInfo.GetGraphicscardInfo().ToString());
+
+            list.Items.Add(RamInfo.GetTotalUsableRam());
+            list.Items.Add(RamInfo.GetAvailableRam());
+            list.Items.Add(RamInfo.GetRamInUse());
+            list.Items.Add(RamInfo.GetHardwareReservedRam());
         }
     }
 }

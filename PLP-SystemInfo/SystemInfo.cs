@@ -6,11 +6,25 @@ namespace PLP_SystemInfo
 {
     public static class SystemInfo
     {
+        /// <summary>
+        /// Retruns the username of the current user.
+        /// </summary>
         public static string UserName => Environment.UserName;
+
+        /// <summary>
+        /// Retruns the name of the machine.
+        /// </summary>
         public static string MachineName => Environment.MachineName;
+
+        /// <summary>
+        /// Returns a boolean value indicating whether Windows Dark Mode is enabled.
+        /// </summary>
         public static bool IsDarkModeEnabled => Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1) is null;
 
-
+        /// <summary>
+        /// Returns the Windows accent color as HEX value.
+        /// </summary>
+        /// <returns></returns>
         public static string GetWindowsAccentColor()
         {
             Color color = GetAccentColor();
@@ -18,6 +32,11 @@ namespace PLP_SystemInfo
             return c;
         }
 
+        /// <summary>
+        /// Returns the Windows accent color as a Color value.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public static Color GetAccentColor()
         {
             const String DWM_KEY = @"Software\Microsoft\Windows\DWM";

@@ -5,7 +5,10 @@ namespace PLP_SystemInfo.ComponentInfo
 {
     public class BoardInfo
     {
-        //Motherboard
+        /// <summary>
+        /// Returns an object of type **Board** with manufacturer and model.
+        /// </summary>
+        /// <returns></returns>
         public static Board GetMotherboard()
         {
             string manufacturer = "";
@@ -21,6 +24,10 @@ namespace PLP_SystemInfo.ComponentInfo
             return new Board(manufacturer, model);
         }
 
+        /// <summary>
+        /// Returns an object of type **BIOS** with manufacturer and version.
+        /// </summary>
+        /// <returns></returns>
         public static BIOS GetBIOSInfo()
         {
             string manufacturer = "";

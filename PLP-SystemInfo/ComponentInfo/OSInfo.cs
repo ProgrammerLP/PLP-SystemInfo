@@ -4,6 +4,10 @@ namespace PLP_SystemInfo.ComponentInfo
 {
     public class OSInfo
     {
+        /// <summary>
+        /// Returns a string with OS name and architecture.
+        /// </summary>
+        /// <returns></returns>
         public static string GetOperatingSystemInfo()
         {
             string osa = "";
