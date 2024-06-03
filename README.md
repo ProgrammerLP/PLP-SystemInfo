@@ -1,8 +1,7 @@
 # PLP-SystemInfo
 
-A C# Library for getting several SystemInfos!
 <img alt="NuGet Downloads" src="https://img.shields.io/nuget/dt/PLP-SystemInfo">
-
+A C# Library for getting several SystemInfos!
 
 PLP-SystemInfo is compatible with the following frameworks:
 - .NET 5 or higher
