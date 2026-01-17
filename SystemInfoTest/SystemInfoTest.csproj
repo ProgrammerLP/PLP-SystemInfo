@@ -2,15 +2,10 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <StartupObject>PLP_SystemInfoTest.App</StartupObject>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\PLP-SystemInfo\PLP-SystemInfo.csproj" />
-  </ItemGroup>
 
 </Project>
